@@ -74,9 +74,15 @@ div {
   box-shadow: 0px 0px 15px #222;
 }
 
-/* move the main supporting class in the middle of the page */
 .supporting {
   grid-column: 2 / 3;
+  padding: 10px;
+}
+
+#supporting-text {
+  font-family: "Enchanted";
+  font-size: 30px;
+  color: #7d3c98;
 }
 
 a[title*="CSS"] {
@@ -93,16 +99,40 @@ a[title*="HTML"] {
   border-top: 10px solid #daa520;
 }
 
+.page-wrapper section:last-of-type {
+  border-bottom: 10px solid #daa520;
+}
+
 .page-wrapper div:has(h3) {
   background-color: rgba(255, 223, 186, 0.5);
 }
 
-/* Further adjustments for grid layout for sections */
-.page-wrapper > section {
-  grid-column: 3;
+.page-wrapper div:has(h3) h3 {
+  font-family: "Enchanted";
+  font-size: 30px;
+  color: #7d3c98;
 }
 
-.page-wrapper > article {
+/* Style the footer */
+.page-wrapper footer {
+  border-bottom: 10px solid #daa520;
+}
+
+/* Style the footer links */
+.page-wrapper footer a {
+  color: #690588;
+  text-decoration: underline;
+}
+
+/* Style the footer links on hover */
+.page-wrapper footer a:hover {
+  color: #034f0c;
+  font-size: xx-large;
+  font-weight: 800;
+}
+
+/* Further adjustments for grid layout for sections */
+.page-wrapper > section {
   grid-column: 3;
 }
 
