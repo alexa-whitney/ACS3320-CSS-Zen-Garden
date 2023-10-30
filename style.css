@@ -1,14 +1,6 @@
 /* Fantasy Theme */
 
 /* Custom Fonts */
-
-@font-face {
-  font-family: "wonderland";
-  src: url("fonts/wonderland.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 @font-face {
   font-family: "Kramer";
   src: url("fonts/kramer/Kramer.ttf") format("truetype");
@@ -23,14 +15,8 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: "fairytales";
-  src: url("fonts/pwfairytales/PWFairyTales.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* Reset & Typography */
+/* Using wildcard selector */
 * {
   box-sizing: border-box;
   font-family: "Tangerine", fantasy;
@@ -41,194 +27,91 @@
 
 h1 {
   font-size: 150px;
-  font-family: "Enchanted";
+  font-family: "Kramer";
   font-weight: 100;
-  color: purple;
+  color: #7d3c98;
 }
 
-body {
+.page-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 20px;
   background-image: url(images/fantasy.jpeg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   background-attachment: scroll;
+  padding: 20px;
 }
 
-h2,
-h3,
-h4 {
-  color: goldenrod;
-  font-family: "fairytales";
+#css-zen-garden {
+  margin: 0;
+  padding: 0;
+  border: #daa520 solid 5px;
 }
 
-/* Links */
-a {
-  color: purple;
-  text-decoration: none;
-}
-
-a:hover,
-#nav ul li a:hover {
-  color: darkorchid;
-  text-decoration: underline;
-  background: rgba(0, 0, 0, 0.2);
-}
-
-a[target="_blank"] {
-  background: lavender;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-/* Parchment Styling for sections and articles */
-section,
-article {
-  background-color: rgba(255, 255, 224, 0.8);
-  border: 2px dashed goldenrod; /* Add a dashed goldenrod border */
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+.page-wrapper header {
+  text-align: center;
   padding: 20px;
   border-radius: 10px;
-  overflow: hidden;
+  background-color: rgba(255, 223, 186, 0.6);
+  box-shadow: 0px 0px 15px #222;
 }
 
-/* Grid Layout */
-#container {
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: auto auto auto;
-  gap: 20px;
-  padding: 2% 5%;
+div {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 223, 186, 0.4);
+  box-shadow: 0px 0px 15px #222;
+}
+
+.page-wrapper footer {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 223, 186, 0.6);
+  box-shadow: 0px 0px 15px #222;
+}
+
+/* move the main supporting class in the middle of the page */
+.supporting {
+  grid-column: 2 / 3;
+}
+
+a[title*="CSS"] {
+  color: #690588;
+  text-decoration: underline;
+}
+
+a[title*="HTML"] {
+  color: #690588;
+  text-decoration: underline;
+}
+
+.page-wrapper section:first-of-type {
+  border-top: 10px solid #daa520;
+}
+
+.page-wrapper div:has(h3) {
+  background-color: rgba(255, 223, 186, 0.5);
+}
+
+/* Further adjustments for grid layout for sections */
+.page-wrapper > section {
+  grid-column: 3;
+}
+
+.page-wrapper > article {
+  grid-column: 3;
 }
 
 section:nth-of-type(1) {
-  grid-column: 1;
+  grid-column: 2;
   grid-row: 1 / span 2;
 }
 
 section:nth-of-type(2) {
   grid-column: 3;
   grid-row: 1;
-}
-
-article {
-  grid-column: 2;
-  grid-row: 3;
-}
-
-/* Header */
-#header {
-  grid-column: 1 / span 2;
-  padding: 30px;
-  border: 5px double goldenrod;
-  border-radius: 10px;
-  text-align: center;
-}
-
-/* Navigation */
-#nav ul {
-  list-style-type: none;
-}
-
-#nav ul li {
-  margin: 10px 0;
-}
-
-#nav ul li:first-of-type a {
-  color: royalblue;
-}
-
-#nav ul li:last-of-type a {
-  color: darkcyan;
-}
-
-#nav ul li:nth-child(3) a {
-  font-size: 20px;
-}
-
-#nav > ul > li > a {
-  padding: 5px 10px;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-}
-
-/* Scroll Style for Introduction */
-section:nth-of-type(1) {
-  position: relative;
-  background-color: rgba(
-    240,
-    230,
-    210,
-    0.9
-  ); /* Slightly off-white to mimic parchment */
-  overflow: hidden; /* Hide pseudo-elements that spill out */
-}
-
-section:nth-of-type(1)::before,
-section:nth-of-type(1)::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: 50px;
-  height: 50px;
-  background-color: #8a7d6b; /* The color of the scroll handles */
-  border-radius: 50%;
-  transform: translateX(-50%);
-}
-
-section:nth-of-type(1)::before {
-  top: -25px; /* Positioning the top scroll handle */
-}
-
-section:nth-of-type(1)::after {
-  bottom: -25px; /* Positioning the bottom scroll handle */
-}
-
-/* Main Content Section Styles */
-article {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-article section {
-  margin: 20px;
-  border: 2px dashed goldenrod;
-  font-family: "wonderland"; /* Using the same font for all article sections */
-  display: flex; /* Flexbox */
-  align-items: center;
-  justify-content: center;
-}
-
-article section:nth-of-type(1) {
-  background-color: rgba(222, 184, 135, 0.7);
-  width: 70%;
-  height: 200px;
-}
-
-article section:nth-of-type(2) {
-  background-color: rgba(216, 191, 216, 0.7);
-  width: 80%;
-  height: 250px;
-}
-
-article section:nth-of-type(3) {
-  background-color: rgba(173, 216, 230, 0.7);
-  width: 90%;
-  height: 300px;
-}
-
-article section:nth-of-type(4) {
-  background-color: rgba(221, 160, 221, 0.7);
-  width: 75%;
-  height: 220px;
-}
-
-#zen-participation,
-#zen-benefits {
-  background-color: rgba(255, 255, 224, 0.8);
-  border: 2px dashed goldenrod;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  border-radius: 10px;
-  overflow: hidden;
 }
